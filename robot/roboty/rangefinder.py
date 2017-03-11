@@ -4,9 +4,9 @@ import RPi.GPIO as GPIO
 import time
  
 #GPIO Mode (BOARD / BCM)
-GPIO.setmode(GPIO.BCM)
+# GPIO.setmode(GPIO.BCM)
  
-class RangeSensor:
+class RangeFinder:
     def __init__(self, trigger_pin, echo_pin):
         self.trigger_pin = trigger_pin
         self.echo_pin = echo_pin
@@ -41,13 +41,13 @@ class RangeSensor:
      
         return distance
  
-range = RangeSensor(21,20)
-try:
-    while True:
-        dist = range.distance()
-        print ("Measured Distance = %.1f cm" % dist)
-        time.sleep(1)
-except KeyboardInterrupt:
-    GPIO.cleanup()
+# range = RangeSensor(21,20)
+# try:
+#     while True:
+#         dist = range.distance()
+#         print ("Measured Distance = %.1f cm" % dist)
+#         time.sleep(1)
+# except KeyboardInterrupt:
+#     GPIO.cleanup()
 
     
